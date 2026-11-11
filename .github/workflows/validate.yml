@@ -1,0 +1,20 @@
+name: Dataset beta checks
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  verify-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate beta source licences, status and exclusion of unreleased data
+        run: python tools/beta_release_gate.py .
+      - name: Check release manifest checksums
+        run: python tools/verify_manifest.py .
