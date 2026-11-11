@@ -20,7 +20,7 @@ jobs:
         with:
           python-version: "3.12"
       - name: Check source mapping and hold states
-        run: python tools/validate_annotation_pilot.py .
+        run: python tools/validate_annotation_pilot.py --root .
       - name: Run synthetic regression tests
         run: python -m unittest discover -s tests -p "test_annotation_pilot.py"
       - name: Check browser JavaScript syntax
