@@ -1,0 +1,9 @@
+task_id,source_id,priority,review_task,assigned_to,status,required_evidence,publication_dependency
+TASK-YT-001,YT-0001,high,Listen for natural conversational structures and confirm adult-speaker ethical suitability,,not_started,Reviewer timestamped nonverbatim notes,Creator rights and speaker consent
+TASK-YT-002,YT-0002,high,Confirm whether CC BY-NC restrictions and speaker rights permit proposed linguistic reuse,,not_started,Publisher licence and rights-holder reply,Noncommercial restricted source
+TASK-YT-003,YT-0003,medium,Review instructional grammar claims against Jamaican Language Unit sources,,not_started,Independent source citation and specialist linguistic check,No transcript copying
+TASK-YT-004,YT-0004,medium,Review lesson context for spelling and pedagogy rather than spontaneous usage,,not_started,Reviewer time positions and original commentary,Source citation
+TASK-YT-005,YT-0005,medium,Compare taught pronouns with initial JAM-LANG lexical entries,,not_started,Independent reviewer notes with no copied speech,No owner attestation assumed
+TASK-YT-006,YT-0006,medium,Assess interview code-switching and register with nonverbatim notes,,not_started,Playback review with time positions,Publisher terms and participant rights
+TASK-YT-007,YT-0007,high,Discover specific Braadkyaas Jamiekan episodes then open separate source rows,,not_started,Published video URLs and date,No assumed institutional permission
+TASK-YT-008,YT-0008,high,Discover specific Jamaican Language Unit videos and corroborating references,,not_started,Published video URLs and date,No assumed institutional permission
