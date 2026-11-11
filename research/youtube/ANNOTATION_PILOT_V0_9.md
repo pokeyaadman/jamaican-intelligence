@@ -19,7 +19,7 @@
 From repository root:
 
 ~~~bash
-python tools/validate_annotation_pilot.py .
+python tools/validate_annotation_pilot.py --root .
 python -m unittest discover -s tests -p "test_annotation_pilot.py"
 node --check research/youtube/annotation_workbench.js
 ~~~
