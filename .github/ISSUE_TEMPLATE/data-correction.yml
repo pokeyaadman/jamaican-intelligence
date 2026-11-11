@@ -1,0 +1,30 @@
+name: Report a data correction
+about: Submit a proposed non-sensitive correction to a released record
+labels: ["data-quality"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        GitHub issues are PUBLIC. Do not include personal information, private contact details, consent documents, or unpublished cultural materials.
+  - type: input
+    id: record
+    attributes:
+      label: Record identifier
+      description: e.g. LANG-000001
+      placeholder: LANG-000001
+    validations:
+      required: true
+  - type: textarea
+    id: issue
+    attributes:
+      label: What should be corrected?
+      description: Explain the issue without including private or sensitive information.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Public supporting evidence
+      description: Links to trustworthy public evidence or non-sensitive context.
+    validations:
+      required: false
