@@ -1,0 +1,23 @@
+name: YouTube speech discovery policy checks
+on:
+  pull_request:
+    paths:
+      - "research/youtube/**"
+      - "tools/validate_youtube_sources.py"
+      - ".github/workflows/youtube-research-checks.yml"
+permissions:
+  contents: read
+jobs:
+  validate-video-source-registry:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate discovery-only status rights gating and provenance
+        run: python tools/validate_youtube_sources.py .
+      - name: Cross-check permission matrix by source and intended use
+        run: python tools/validate_youtube_rights.py .
