@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Jamaican Intelligence — Speech Annotation Pilot</title>
+<style>
+:root{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#17243a;background:#f4f6fa}
+*{box-sizing:border-box}body{margin:0}header{background:#102e3e;color:white;padding:30px max(22px,calc((100vw - 1080px)/2));border-bottom:5px solid #e1b84b}
+h1{font-size:clamp(1.5rem,3vw,2.2rem);margin:0 0 8px}h2{font-size:1.13rem;margin:0 0 14px}p{line-height:1.5}header p{color:#d8e9f4;margin:0}
+main{max-width:1080px;margin:26px auto;padding:0 18px 60px;display:grid;gap:20px}
+.panel{background:white;border:1px solid #dfe5eb;border-radius:14px;box-shadow:0 4px 16px #1f2c3c0a;padding:24px}
+.callout{padding:14px 18px;background:#fff8e7;border-left:4px solid #ba841a;border-radius:6px;color:#684613;font-size:.93rem}
+label{font-weight:650;display:block;font-size:.89rem;margin:0 0 6px}small,.muted{color:#526779}
+input,select,textarea{font:inherit;width:100%;padding:10px 12px;border:1px solid #bac7d4;border-radius:8px;background:white;color:#14273a}
+input:focus,select:focus,textarea:focus{outline:2px solid #1479a7;outline-offset:2px}
+textarea{resize:vertical;min-height:95px}fieldset{border:0;padding:0;margin:0}fieldset legend{font-weight:700;margin-bottom:8px}
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.field{min-width:0}.field p{font-size:.83rem;margin:6px 0 0}
+.row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.btn,a.action{display:inline-flex;justify-content:center;align-items:center;gap:8px;min-height:42px;padding:10px 16px;border-radius:8px;border:1px solid #0b6688;background:#075a78;color:white;font:inherit;font-weight:650;cursor:pointer;text-decoration:none}
+.btn.secondary,a.action.secondary{background:white;color:#075a78}.btn.danger{border-color:#a52828;color:#9a2525;background:#fff}
+.btn:hover,a.action:hover{filter:brightness(.94)}.btn:disabled{opacity:.45;cursor:not-allowed}
+a{color:#075a78}.stack{display:grid;gap:18px}
+.meta{padding:12px 16px;background:#eff5f8;border-radius:9px;font-size:.9rem;line-height:1.5}
+.check{display:flex;align-items:flex-start;gap:10px;font-weight:500}.check input{width:18px;height:18px;flex:none;margin-top:4px}
+.status{margin-top:14px;min-height:28px;font-weight:600;color:#155c43}.status.error{color:#a02826}
+.tabwrap{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:.87rem;min-width:720px}
+th,td{text-align:left;border-bottom:1px solid #e3e9ef;padding:10px;vertical-align:top;max-width:320px;overflow-wrap:anywhere}
+th{background:#f3f6f9;color:#284b5f}td button{font-size:.8rem;padding:7px}
+.kpi{font-size:1.7rem;font-weight:760;display:inline;color:#12344a}
+footer{padding:20px 0 0;color:#66778a;font-size:.8rem}
+@media(max-width:680px){.two,.three{grid-template-columns:1fr}.panel{padding:18px}header{padding:24px 20px}}
+</style>
+</head>
+<body>
+<header>
+  <h1>Jamaican Intelligence — Speech Annotation Pilot</h1>
+  <p>Research workbench v0.9 · Human listening and review · Local-first</p>
+</header>
+<main>
+  <section class="callout" role="note">
+    <strong>Research only — nothing here is automatically published.</strong> Open videos using the official YouTube watch links, listen through permitted playback, and enter your <em>own short, non-verbatim linguistic observations</em>. Do not paste subtitles, full transcripts, song lyrics, audio files, personal information or identifying voice details. No data is transmitted to Jamaican Intelligence servers by this page.
+  </section>
+  <section class="panel stack" aria-labelledby="source-heading">
+    <h2 id="source-heading">1 · Choose a source and listen</h2>
+    <div class="field"><label for="source">YouTube video lead</label><select id="source" required></select></div>
+    <div id="sourceDetails" class="meta"></div>
+    <div class="two">
+      <div class="field"><label for="timestamp">Timestamp in seconds</label><input id="timestamp" type="number" min="0" max="86400" step="1" value="0" required><p>Example: 1:42 = 102 seconds. Never invent a timestamp.</p></div>
+      <div class="field"><label>Watch using official YouTube</label><div class="row"><a id="watch" class="action" target="_blank" rel="noopener noreferrer">Open recording</a><a id="seek" class="action secondary" target="_blank" rel="noopener noreferrer">Open at timestamp</a></div><p>This page does not download, scrape or embed recordings.</p></div>
+    </div>
+  </section>
+  <section class="panel stack" aria-labelledby="entry-heading">
+    <h2 id="entry-heading">2 · Record a brief linguistic observation</h2>
+    <form id="reviewForm" class="stack">
+      <div class="two">
+        <div class="field"><label for="feature">Observed word or feature</label><input id="feature" required maxlength="100" placeholder="e.g. code-switching at clause boundary"><p>Name a linguistic feature; do not paste dialogue.</p></div>
+        <div class="field"><label for="category">Type of linguistic observation</label>
+          <select id="category"><option value="vocabulary">Vocabulary</option><option value="grammar">Grammar</option><option value="phonology">Pronunciation/phonology</option><option value="code_switching">Code-switching</option><option value="discourse">Discourse/pragmatics</option><option value="other">Other / uncertain</option></select>
+        </div>
+      </div>
+      <div class="field"><label for="note">Your original non-verbatim note (max 240 characters)</label><textarea id="note" maxlength="240" required placeholder="Describe the feature in your own words, including uncertainty. No direct quotation or transcript."></textarea><p id="chars" class="muted">0 / 240</p></div>
+      <div class="three">
+        <div class="field"><label for="register">Speech context</label><select id="register"><option value="unknown">Unknown / needs review</option><option value="informal_conversation">Informal conversation</option><option value="interview">Interview</option><option value="education">Language teaching</option><option value="scripted">Scripted/performed</option><option value="other">Other</option></select></div>
+        <div class="field"><label for="switching">Code-switching observed?</label><select id="switching"><option value="uncertain">Uncertain</option><option value="yes">Yes</option><option value="no">No</option></select></div>
+        <div class="field"><label for="role">Reviewer role (self-reported)</label><select id="role"><option value="research_assistant">Research assistant</option><option value="native_speaker">Jamaican Creole speaker</option><option value="linguist">Linguist</option><option value="other">Other reviewer</option></select></div>
+      </div>
+      <div class="two">
+        <div class="field"><label for="reviewer">Anonymous reviewer code</label><input id="reviewer" maxlength="16" pattern="[A-Za-z0-9_-]{2,16}" required placeholder="e.g. RV-001"><p>Use a pseudonym. Do not enter a name or email address.</p></div>
+        <div class="field"><label for="secondary">Independent public reference (optional)</label><input id="secondary" type="url" placeholder="https://..."><p>For later corroboration only; not evidence of approval.</p></div>
+      </div>
+      <label class="check"><input id="listened" type="checkbox" required><span>I personally listened to the video at the timestamp recorded. This is not a claim of expert verification.</span></label>
+      <label class="check"><input id="safe" type="checkbox" required><span>My note is original, brief, and does not contain a transcript, copyrighted quotations, personal identifiers or sensitive details.</span></label>
+      <div class="row"><button class="btn" type="submit">Add to local review queue</button><span class="muted">Every record is automatically marked <strong>hold_review_pending</strong>.</span></div>
+    </form>
+    <div id="status" class="status" role="status" aria-live="polite"></div>
+  </section>
+  <section class="panel stack" aria-labelledby="queue-heading">
+    <h2 id="queue-heading">3 · Inspect and export for private review</h2>
+    <p><span class="kpi" id="count">0</span> locally queued observations · No automatic sharing or persistent storage.</p>
+    <div class="row">
+      <button id="export" class="btn" type="button" disabled>Export review-only CSV</button>
+      <button id="clear" class="btn danger" type="button" disabled>Discard all local notes</button>
+    </div>
+    <div class="callout">The exported CSV must go to a restricted reviewer, not directly into the public GitHub dataset. Linguistic verification, rights clearance, privacy assessment and owner approval remain separate required steps.</div>
+    <div class="tabwrap"><table><thead><tr><th>ID / source</th><th>Time</th><th>Feature</th><th>Original observation</th><th>Status</th><th></th></tr></thead><tbody id="items"><tr><td colspan="6" class="muted">No observations entered.</td></tr></tbody></table></div>
+  </section>
+  <footer>This tool is independent of YouTube and is not affiliated with or endorsed by any channel. Research status is preliminary; video rights and speaker consent are not asserted.</footer>
+</main>
+<script src="./annotation_workbench.js" defer></script>
+</body>
+</html>
