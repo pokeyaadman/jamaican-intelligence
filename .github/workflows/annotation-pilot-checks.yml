@@ -1,0 +1,27 @@
+name: Human speech annotation pilot checks
+on:
+  pull_request:
+    paths:
+      - "research/youtube/annotation_workbench.*"
+      - "research/youtube/pilot_review_assignments_v0_9.csv"
+      - "tools/validate_annotation_pilot.py"
+      - "tests/test_annotation_pilot.py"
+      - ".github/workflows/annotation-pilot-checks.yml"
+permissions:
+  contents: read
+jobs:
+  check-pilot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out review branch
+        uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Check source mapping and hold states
+        run: python tools/validate_annotation_pilot.py --root .
+      - name: Run synthetic regression tests
+        run: python -m unittest discover -s tests -p "test_annotation_pilot.py"
+      - name: Check browser JavaScript syntax
+        run: node --check research/youtube/annotation_workbench.js
