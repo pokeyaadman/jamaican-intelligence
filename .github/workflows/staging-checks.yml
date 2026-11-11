@@ -1,0 +1,21 @@
+name: Staged Patois candidate validation
+on:
+  pull_request:
+    paths:
+      - "staging/**"
+      - "tools/validate_staging.py"
+      - ".github/workflows/staging-checks.yml"
+permissions:
+  contents: read
+jobs:
+  review-metadata:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate staged lexical records, source indexes and exclusion from released beta
+        run: python tools/validate_staging.py .
