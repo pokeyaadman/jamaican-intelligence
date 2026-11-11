@@ -1,0 +1,38 @@
+source_id,name,source_type,source_url,terms_url,licence_status,review_status,added_or_retrieved_date
+SRC-0001,Jamaica Open Data Portal,government_open_data,https://data.gov.jm/,,unknown,needs_review,2026-11-10
+SRC-0002,National Library of Jamaica Digital Collections,archive,https://nlj.gov.jm/digital-collections/,,unknown,needs_review,2026-11-10
+SRC-0003,Companies Office of Jamaica,official_registry,https://www.orcjamaica.com/,https://www.orcjamaica.com/Compliance.aspx,restricted,needs_review,2026-11-10
+SRC-0004,STATIN Statistical Business Register methodology,official_statistics,https://statinja.gov.jm/methodology.aspx,,unknown,needs_review,2026-11-10
+SRC-0005,Office of the Information Commissioner - Data Protection Standards,regulatory_guidance,https://www.oic.gov.jm/page/data-protection-standards,,public_reference,reviewed,2026-11-10
+SRC-0006,Jamaica Artificial Intelligence Association - Jamaican Patois ASR research,technical_research,https://jaia.org.jm/blog/teaching-ai-to-understand-jamaican-patois,,unknown,needs_review,2026-11-10
+SRC-0007,JamPatoisNLI research paper,academic_dataset_paper,https://nlp.stanford.edu/pubs/armstrong2022jampatoisnli.pdf,,unknown,needs_review,2026-11-10
+SRC-0008,Institute of Jamaica - museums and divisions,cultural_institution,https://instituteofjamaica.org.jm/plan-your-visit/,,unknown,needs_review,2026-11-10
+SRC-0009,Institute of Jamaica - Jamaica Journal,academic_publication,https://instituteofjamaica.org.jm/publications/,,unknown,needs_review,2026-11-10
+SRC-0010,JCDC National Performing Arts Handbook 2026,government_cultural_document,https://jcdc.gov.jm/sites/default/files/handbooks/2026-national-performing-arts-handbook-2026.pdf,,unknown,needs_review,2026-11-10
+SRC-0011,JamPatoisNLI dataset card,academic_dataset,https://huggingface.co/datasets/Ruth-Ann/jampatoisnli,https://huggingface.co/datasets/Ruth-Ann/jampatoisnli/blob/main/README.md,unknown,needs_review,2026-11-11
+SRC-0012,National Museum Jamaica collections,museum_collection,https://museums-ioj.org.jm/collection/,,unknown,needs_review,2026-11-11
+SRC-0013,National Library of Jamaica history notes,official_history_reference,https://nlj.gov.jm/history-notes-jamaica/,,unknown,needs_review,2026-11-11
+SRC-0014,NLJ Riots and Rebellions collection,archive_catalogue,https://nlj.gov.jm/riots-and-rebellions/,https://nlj.gov.jm/digital-reproduction-policy/,restricted,needs_review,2026-11-11
+SRC-0015,Jamaica's Heritage in Music,government_cultural_reference,https://jis.gov.jm/information/jamaicas-heritage-dance-music/jamaicas-heritage-music/,,unknown,needs_review,2026-11-11
+SRC-0016,Jamaica's Heritage in Dance,government_cultural_reference,https://jis.gov.jm/information/jamaicas-heritage-dance-music/jamaicas-heritage-dance/,,unknown,needs_review,2026-11-11
+SRC-0017,NLJ Digital Reproduction Policy,rights_policy,https://nlj.gov.jm/digital-reproduction-policy/,,public_reference,reviewed,2026-11-11
+SRC-0018,STATIN standard services and microdata conditions,statistical_data_policy,https://statinja.gov.jm/Standardservices.aspx,,restricted,reviewed,2026-11-11
+SRC-0019,Wiktionary Jamaican Creole Swadesh list,open_lexical_reference,https://en.wiktionary.org/wiki/Appendix:Jamaican_Creole_Swadesh_list,https://en.wiktionary.org/wiki/Wiktionary:Copyrights,open_licence,reviewed_licence_only,2026-11-11
+SRC-0020,Wiktionary Jamaican Creole grammar appendix,open_grammar_reference,https://en.wiktionary.org/wiki/Appendix:Jamaican_Creole,https://en.wiktionary.org/wiki/Wiktionary:Copyrights,open_licence,reviewed_licence_only,2026-11-11
+SRC-0021,Wiktionary reuse and copyright information,rights_policy,https://en.wiktionary.org/wiki/Wiktionary:Copyrights,https://creativecommons.org/licenses/by-sa/4.0/,public_reference,reviewed,2026-11-11
+SRC-0022,Island Grill official branch locations,official_business_site,https://www.islandgrillja.com/locations,,unknown,needs_review,2026-11-11
+SRC-0023,Fontana official branch list,official_business_site,https://fontanapharmacy.com/pages/Contact-Us.html,,unknown,needs_review,2026-11-11
+SRC-0024,Fontana branch-parish and service information,official_business_site,https://fontanapharmacy.com/pages/Help.html,,unknown,needs_review,2026-11-11
+SRC-0025,Jamaica Pegasus contact and location,official_business_site,https://www.jamaicapegasus.com/contact-location,,unknown,needs_review,2026-11-11
+SRC-0026,Scoops Unlimited at Devon House,official_business_site,https://www.devonhouseja.com/restaurantsandshops/scoops-unlimited,,unknown,needs_review,2026-11-11
+SRC-0027,UWI Mona Jamaican Language Unit,linguistic_reviewer_lead,https://www.mona.uwi.edu/dllp/jlu/jamaicalanguageunit,,public_reference,needs_review,2026-11-11
+SRC-0028,Jamaica Cultural Development Commission contact,cultural_reviewer_lead,https://www.jcdc.gov.jm/contact-us,,public_reference,needs_review,2026-11-11
+SRC-0029,JNHT independence history,heritage_history,https://www.jnht.gov.jm/history_independence.php,,unknown,needs_review,2026-11-11
+SRC-0030,JNHT Samuel Sharpe Monument,heritage_history,https://www.jnht.gov.jm/site_monument_samuel_sharpe.php,,unknown,needs_review,2026-11-11
+SRC-0031,JNHT Morant Bay Courthouse,heritage_history,https://www.jnht.gov.jm/site_morant_bay_court_house.php,,unknown,needs_review,2026-11-11
+SRC-0032,JNHT Port Royal underwater archaeology,heritage_archaeology,https://www.jnht.gov.jm/site_port_royal_underwater_archaeology.php,,unknown,needs_review,2026-11-11
+SRC-0033,JIS Mento music overview,cultural_history,https://jis.gov.jm/jamaica/mento/,,unknown,needs_review,2026-11-11
+SRC-0034,JIS Jamaican Heritage in Music alternative,cultural_history,https://jis.gov.jm/jamaicas-heritage-music/,,unknown,needs_review,2026-11-11
+SRC-0035,NLJ history notes on Kumina,heritage_history,https://www.nlj.gov.jm/history-notes/history-notes.htm,,unknown,needs_review,2026-11-11
+SRC-0036,Island Grill official headquarters/contact,business_contact_lead,https://www.islandgrillja.com/locations,,unknown,needs_review,2026-11-11
+SRC-0037,Creative Commons BY-SA 4.0 deed,rights_policy,https://creativecommons.org/licenses/by-sa/4.0/,https://creativecommons.org/licenses/by-sa/4.0/legalcode,public_reference,reviewed,2026-11-11
