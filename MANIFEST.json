@@ -1,0 +1,40 @@
+{
+  "project": "Jamaican Intelligence",
+  "release": "0.6.1",
+  "stage": "owner_attested_lexical_beta_github_ready",
+  "generated_date": "2026-11-11",
+  "published_online": false,
+  "record_counts": {
+    "JAM-LANG": 30,
+    "JAM-CULT": 0,
+    "JAM-BIZ": 0
+  },
+  "owner_attested_working_records": 55,
+  "independent_expert_verified_records": 0,
+  "data_license": {
+    "JAM-LANG": "CC BY-SA 4.0",
+    "JAM-CULT": "not released",
+    "JAM-BIZ": "not released"
+  },
+  "files": {
+    ".github/ISSUE_TEMPLATE/data-correction.yml": "977baac085796e6aa096a2227e5f5f2cddf1abb026c14f48d1a4809f78f35d95",
+    ".github/workflows/validate.yml": "10fd528fe48e4fb4c13f2665df6d9c29a5775d0df59e22481428024edfa78470",
+    "ATTRIBUTION.md": "40c25cfa1cbd432e52c4728644db5016db840c8dd5e27fbdb0bbddd1c666a725",
+    "CHANGELOG.md": "6401405adeadd7a5cc2f1db28309f66621ac53990b40c62bb99b2d03c5d451eb",
+    "CONTRIBUTING.md": "ea4d9cfd735c74ec6ecb6145e3bfaa58d4c4e36aec67bac2d11253a680ed6c32",
+    "LICENSES/JAM-LANG-CC-BY-SA-4.0.md": "f8a31e61bff230281be568c215957200f4942e2070fdb847f83a680b3c727dcf",
+    "README.md": "51bebdba679e17f1621e1ee28136e1c9df5a5d10f5c6eb619ca441d3b068cf8a",
+    "REVIEW_WORKFLOW.md": "e379bcf0ea7dac6792f60ec0ef2c5ae4ce20420df22ae2e14c877204e50b4fd5",
+    "SCHEMA.md": "93ba15279fbd04ade22b2b82e7b97d18447afc34aff78851b0cf56f2a121a480",
+    "data/JAM-BIZ.csv": "3c90c04ea6516dbf1b04b43ce1cbbe20d1cd4a7352bc1f9a3c20de2503a086cd",
+    "data/JAM-CULT.csv": "43878343bdf9e1936d1fccfe97f2f9667c18b19e2a0c78cf9903ef7d43903f65",
+    "data/JAM-LANG.csv": "10ee6ae6f49e570c3bba22fe898d53d81cf62eefb4ac18dbeaf0f9ab12e427b9",
+    "docs/GITHUB_PUBLICATION_GUIDE.md": "b5bab819e02ce4e188ab1dc2435eab3445953ceeed266152e9e6f352f2c171a6",
+    "docs/OWNER_ATTESTATION.md": "a7fbbce404d396627af813c3024365921cdf8a152d857d18f7fe7b5fd627307f",
+    "docs/RELEASE_POLICY.md": "0faffe1d2e075bb0dc0a1338990b5c34937b1bc26528f32e220ffe2b8a73ae9d",
+    "metadata/source_index.csv": "c265a8bc0bead93424c6bf6c62866f472731484ac9d3c81b8a52b79753201ddc",
+    "tools/beta_release_gate.py": "ee1373eb0a9c64b407077b2b6ab9fa4314d6a21ff2265aa75f404cd784ab1ad7",
+    "tools/release_gate.py": "0ccd7888aec23d09c376514d19ab11d221ba6d3bdade82b12e1a4fa77d0d13ca",
+    "tools/verify_manifest.py": "3393f791daf45da50b0fed7450ca7a5d39fc6161ef802c4cfcb91b5d4ce3ccfd"
+  }
+}
