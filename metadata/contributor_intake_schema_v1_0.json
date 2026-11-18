@@ -1,0 +1,225 @@
+{
+  "schema_version": "1.0",
+  "effective_date": "2026-11-18",
+  "status": "draft_not_deployed",
+  "description": "Private intake schema; not a public record or permission ledger.",
+  "required": [
+    "submission_id",
+    "dataset",
+    "submission_type",
+    "source_reference",
+    "source_retrieval_date",
+    "rights_status",
+    "verification_status",
+    "last_reviewed_date",
+    "public_release_decision",
+    "consent_notice_version",
+    "consent_evidence_status"
+  ],
+  "fields": {
+    "submission_id": {
+      "type": "string",
+      "pattern": "^SUB-[A-Z0-9-]{6,40}$",
+      "visibility": "internal_pseudonymous"
+    },
+    "dataset": {
+      "type": "enum",
+      "values": [
+        "JAM-LANG",
+        "JAM-CULT",
+        "JAM-BIZ"
+      ]
+    },
+    "submission_type": {
+      "type": "enum",
+      "values": [
+        "lexeme",
+        "grammar",
+        "oral_tradition",
+        "documented_history",
+        "contemporary_practice",
+        "business_owner_submission"
+      ]
+    },
+    "original_form": {
+      "type": "string",
+      "visibility": "review_only",
+      "optional": true
+    },
+    "english_gloss": {
+      "type": "string",
+      "visibility": "review_only",
+      "optional": true
+    },
+    "usage_context": {
+      "type": "string",
+      "visibility": "review_only",
+      "optional": true
+    },
+    "usage_example": {
+      "type": "string",
+      "visibility": "review_only",
+      "optional": true,
+      "rule": "original_or_rights_cleared_only"
+    },
+    "culture_claim_type": {
+      "type": "enum",
+      "values": [
+        "documented_history",
+        "oral_tradition",
+        "interpretation",
+        "contemporary_practice",
+        "not_applicable"
+      ]
+    },
+    "business_registration_status": {
+      "type": "enum",
+      "values": [
+        "unknown",
+        "claimed_registered",
+        "verified_registered",
+        "not_registered",
+        "not_applicable"
+      ]
+    },
+    "business_operating_status": {
+      "type": "enum",
+      "values": [
+        "unknown",
+        "owner_claimed_operating",
+        "independently_verified_operating",
+        "closed",
+        "not_applicable"
+      ]
+    },
+    "source_reference": {
+      "type": "string",
+      "description": "Public URL or private opaque evidence token; never raw private documents"
+    },
+    "source_retrieval_date": {
+      "type": "date_iso"
+    },
+    "last_reviewed_date": {
+      "type": "date_iso"
+    },
+    "rights_status": {
+      "type": "enum",
+      "values": [
+        "not_granted",
+        "pending_review",
+        "verified_scope_specific_grant",
+        "public_domain_verified",
+        "open_licence_verified"
+      ]
+    },
+    "verification_status": {
+      "type": "enum",
+      "values": [
+        "unverified",
+        "source_checked",
+        "community_review_pending",
+        "human_verified",
+        "rejected"
+      ]
+    },
+    "confidence": {
+      "type": "enum",
+      "values": [
+        "unknown",
+        "low",
+        "medium",
+        "high"
+      ]
+    },
+    "consent_notice_version": {
+      "type": "string"
+    },
+    "consent_evidence_status": {
+      "type": "enum",
+      "values": [
+        "missing",
+        "restricted_evidence_recorded",
+        "not_applicable_public_source"
+      ]
+    },
+    "consent_public_text": {
+      "type": "enum",
+      "values": [
+        "not_granted",
+        "granted_scope_specific"
+      ]
+    },
+    "consent_public_business_contact": {
+      "type": "enum",
+      "values": [
+        "not_granted",
+        "granted_scope_specific",
+        "not_applicable"
+      ]
+    },
+    "consent_audio_reuse": {
+      "type": "enum",
+      "values": [
+        "not_granted",
+        "granted_scope_specific",
+        "not_applicable"
+      ]
+    },
+    "consent_ai_training": {
+      "type": "enum",
+      "values": [
+        "not_granted",
+        "granted_scope_specific"
+      ]
+    },
+    "consent_commercial_reuse": {
+      "type": "enum",
+      "values": [
+        "not_granted",
+        "granted_scope_specific"
+      ]
+    },
+    "consent_redistribution": {
+      "type": "enum",
+      "values": [
+        "not_granted",
+        "granted_scope_specific"
+      ]
+    },
+    "public_release_decision": {
+      "type": "enum",
+      "values": [
+        "hold",
+        "approved_by_human_reviewer",
+        "rejected"
+      ]
+    },
+    "publication_approval_reference": {
+      "type": "string",
+      "visibility": "internal_only",
+      "optional": true
+    },
+    "reviewer_code": {
+      "type": "string",
+      "visibility": "internal_only",
+      "optional": true
+    },
+    "withdrawal_status": {
+      "type": "enum",
+      "values": [
+        "none",
+        "requested",
+        "actioned",
+        "not_applicable"
+      ]
+    }
+  },
+  "cross_field_rules": [
+    "dataset=JAM-LANG requires original_form and english_gloss before content approval; usage_example required for published lexemes; no audio field without separate rights evidence",
+    "dataset=JAM-CULT requires culture_claim_type and relevant community review for restricted traditions",
+    "dataset=JAM-BIZ requires owner authorization evidence for owner-supplied details; registered and operating statuses must never be conflated",
+    "approved_by_human_reviewer requires restricted consent evidence or verified public-source basis, rights grant compatible with publication, and approval reference",
+    "unknown or pending consent must not be interpreted as permission",
+    "no contributor personal contact details in public dataset"
+  ]
+}
