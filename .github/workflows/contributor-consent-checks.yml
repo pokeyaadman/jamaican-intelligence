@@ -1,0 +1,23 @@
+name: Contributor consent schema checks
+on:
+  pull_request:
+    paths:
+      - "metadata/contributor_intake_schema_v1_0.json"
+      - "metadata/contributor_consent_register_template_v1_0.csv"
+      - "tools/validate_contributor_intake.py"
+      - "tests/test_contributor_intake.py"
+      - ".github/workflows/contributor-consent-checks.yml"
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Load schema
+        run: python tools/validate_contributor_intake.py
+      - name: Synthetic consent-gate tests
+        run: python -m unittest discover -s tests -p "test_contributor_intake.py"
